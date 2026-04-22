@@ -1,0 +1,109 @@
+:root {
+    --secondary_yellow: #ffeeb5;
+}
+
+body {
+    margin: 0;
+}
+section { /*REMOVE AFTER FINISH*/
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px;
+}
+
+.more_btn {
+    margin: 20px 0 20px 0;
+}
+
+#home_header {
+    background-image: url("/img/homepage_photo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    border: 20px solid var(--secondary_yellow);
+    min-height: 100vh;
+}
+
+#places_cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 114px;
+    margin-top: 70px;
+}
+
+.sign_card {
+    border: black 1px solid;
+    /*background-image: url("/img/sign_border.png");*/
+    min-width: 400px;
+    min-height: 531px;
+}
+
+#places {
+    padding-bottom: 80px;
+}
+
+#activities_cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px
+}
+
+.activity_card {
+    border: black 1px solid;
+    width: 1230px;
+    height: 325px;
+    position: relative;
+
+    .activity_photo {
+        border: black 1px solid;
+        border-radius: 100%;
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        top: -45px;
+        left: -45px;
+
+    }
+}
+
+#travel_imgs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 75px;
+}
+
+.travel_img {
+    border: black 1px solid;
+    width: 404px;
+    height: 605px;
+}
+
+#quiz_imgs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 84px;
+    padding: 20px 0 20px 0;
+}
+
+.quiz_img {
+    border: black 1px solid;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+footer {
+    min-height: 230px;
+}
+
+
