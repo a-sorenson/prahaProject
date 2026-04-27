@@ -1,9 +1,13 @@
 :root {
+    --secondary_navy: #011936;
     --secondary_yellow: #ffeeb5;
+    --highlight_pink: #A61C3C;
+    font-family: 'Calistoga', serif;
 }
 
 body {
     margin: 0;
+    /*font-family: 'Calistoga', serif;*/
 }
 section { /*REMOVE AFTER FINISH*/
     border: 1px solid black;
@@ -18,16 +22,41 @@ h2 {
 }
 
 .more_btn {
-    margin: 20px 0 20px 0;
+    margin: 40px 0 40px 0;
+    text-align: center;
+    height: 60px;
+    width: 20%;
+    border-radius: 50px;
+    border-color: var(--highlight_pink);
+    background-color: var(--highlight_pink) ;
+    color: white;
+    font-size: 24px;
+    font-family: 'Calistoga', serif;
+
+    &:hover {
+        background-color: #FFFFFF;
+        color: var(--highlight_pink);
+    }
+
 }
 
 #home_header {
     background-image: url("/img/homepage_photo.jpg");
+    background-color: rgba(0,0,0,0.1);
+    background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
     border: 20px solid var(--secondary_yellow);
     min-height: 100vh;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    text-align: justify;
+    font-size: 42vw;
+    color: var(--secondary_yellow);
 }
 
 #places_cards {
@@ -39,21 +68,40 @@ h2 {
 }
 
 .sign_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
     border: black 1px solid;
-    /*background-image: url("/img/sign_border.png");*/
+    background-image: url("/img/sign_card.png");
+    background-repeat: no-repeat;
     min-width: 400px;
     min-height: 531px;
+
+    p{
+        padding-bottom: 15px;
+        text-align: center;
+        color:white;
+        font-weight: bold;
+        font-size: 36pt;
+    }
 }
 
 #places {
     padding-bottom: 80px;
 }
 
+#activities {
+    background-image: url("/img/river_curve.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
 #activities_cards {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 100px
+    gap: 100px;
 }
 
 .activity_card {
@@ -62,16 +110,25 @@ h2 {
     height: 325px;
     position: relative;
 
+    background-color: var(--secondary_navy);
+
     .activity_photo {
         border: black 1px solid;
         border-radius: 100%;
         position: absolute;
+        object-fit: cover;
         width: 280px;
         height: 280px;
         top: -45px;
         left: -45px;
-
     }
+}
+
+#travels {
+    margin: 0;
+    background-image: url("/img/travels_background.png");
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #travel_imgs {
@@ -81,12 +138,18 @@ h2 {
     gap: 75px;
 }
 
-.travel_img {
-    border: black 1px solid;
-    width: 404px;
-    height: 605px;
+.travel_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    .travel_img {
+        border: black 1px solid;
+        width: 404px;
+        height: 605px;
+        object-fit: cover;
+    }
 }
-
 #quiz_imgs {
     display: flex;
     flex-direction: row;
