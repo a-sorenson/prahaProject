@@ -43,7 +43,7 @@ let monuments = {
 };
 
 let monumentPics = {
-    a:"../img/homepage_photo.jpg"
+    a:"../img/astro_clock.jpg"
 }
 
 let monumentResult = "";
@@ -71,8 +71,7 @@ function buildQuiz(){
                 // ...add an HTML radio button
                 answers.push(
                     `<label>
-                        <input type="radio" name="q${questionNumber+1}" value="${currentQuestion.answers[letter]}">
-                        ${letter} :
+                        <input type="radio" name="q${questionNumber+1}" value="${currentQuestion.answers[letter]}" class="answer">
                         ${currentQuestion.answers[letter]}
                     </label>`
                 );
@@ -123,9 +122,8 @@ function calculateResult(event) {
 function displayResults(){
     quiz.innerHTML = '';
 
-    result.innerHTML = `<h2>You are ${monumentResult}</h2>\n` +
+    quiz.innerHTML = `<h2>You are the ${monumentResult}</h2>\n` +
         `<img src=${monumentPic} alt="Building Picture" id="resultImage" />\n` +
-        `<p>This is the reason why you are this building</p>` +
         `<button class="back">Back to Homepage</button>`;
 
     let backBtn = document.getElementsByClassName("back")[0];

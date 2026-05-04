@@ -166,22 +166,27 @@ h2 {
 }
 
 /*Quiz Page*/
+
+#quiz_page {
+    background-color: var(--secondary_yellow);
+}
+
 .form_container {
-    border: black 1px solid;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    margin: 20px;
 }
 
-form {
-    border: black 1px solid;
+#quiz {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    max-width: 60%;
+    gap: 20px;
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 20px;
 }
 
 .answers {
@@ -190,6 +195,36 @@ form {
     align-items: flex-start;
     gap: 10px;
 }
+
+label {
+    appearance: none;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+    min-width: 400px;
+    border: 1px solid var(--secondary_navy);
+}
+
+/* hide default radio circle */
+label input[type="radio"] {
+    display: none;
+}
+
+/* selected label style */
+label:has(input[type="radio"]:checked) {
+    background-color: var(--secondary_navy);
+    color: white;
+    transform: scale(1.02);
+}
+
+#resultImage {
+    width: 400px;
+    border-radius: 20px;
+}
+
+
 
 footer {
     min-height: 230px;
