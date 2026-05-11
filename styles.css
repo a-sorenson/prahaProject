@@ -2,47 +2,65 @@
     --secondary_navy: #011936;
     --secondary_yellow: #ffeeb5;
     --highlight_pink: #A61C3C;
-    font-family: 'Calistoga', serif;
-}
-
-body {
-    margin: 0;
     /*font-family: 'Calistoga', serif;*/
 }
+
+/*General*/
+body {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+}
+
 section { /*REMOVE AFTER FINISH*/
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 16px;
+}
+
+h1 {
+    font-family: 'Calistoga', serif;
+    text-align: center;
+    font-size: 32pt;
 }
 
 h2 {
+    font-family: 'Calistoga', serif;
+    font-size: 20pt;
+}
+
+button, input[type=submit] {
+    outline: none;
+
+    border-radius: 50px;
+    border: 1px solid var(--highlight_pink);
+    background-color: var(--highlight_pink);
+
+    font-family: 'Calistoga', serif;
+    font-size: 16pt;
+    color: white;
     text-align: center;
-    padding: 20px;
+
+    padding: 8px 24px;
+
+    &:hover {
+        background-color: white;
+        color: var(--highlight_pink);
+        border: 1px solid var(--highlight_pink);
+    }
 }
 
 .more_btn {
-    margin: 40px 0 40px 0;
-    text-align: center;
-    height: 60px;
-    width: 20%;
-    border-radius: 50px;
-    border-color: var(--highlight_pink);
-    background-color: var(--highlight_pink) ;
-    color: white;
-    font-size: 24px;
-    font-family: 'Calistoga', serif;
+}
 
-    &:hover {
-        background-color: #FFFFFF;
-        color: var(--highlight_pink);
-    }
-
+.submit_btn {
+    margin-top: 12px;
 }
 
 #home_header {
     background-image: url("/img/homepage_photo.jpg");
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.2);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -54,9 +72,11 @@ h2 {
     justify-content: left;
     align-items: center;
 
-    text-align: justify;
-    font-size: 42vw;
-    color: var(--secondary_yellow);
+    width: 100%;
+    overflow: hidden;
+
+    font-size: 15vw;
+    white-space: nowrap;
 }
 
 #places_cards {
@@ -117,8 +137,8 @@ h2 {
         border-radius: 100%;
         position: absolute;
         object-fit: cover;
-        width: 280px;
-        height: 280px;
+        width: 20em;
+        height: 20em;
         top: -45px;
         left: -45px;
     }
@@ -168,7 +188,16 @@ h2 {
 /*Quiz Page*/
 
 #quiz_page {
-    background-color: var(--secondary_yellow);
+    background-image: url("/img/monument_background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: 100%;
+}
+
+#quiz_title {
+    padding: 40px 0;
+    color: var(--secondary_navy);
 }
 
 .form_container {
@@ -176,6 +205,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     margin: 20px;
+
 }
 
 #quiz {
@@ -183,10 +213,23 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    color: var(--secondary_navy);
+}
+
+form.default {
     gap: 20px;
     background-color: white;
     padding: 20px 40px;
-    border-radius: 20px;
+}
+
+form.results {
+    gap: 40px;
+    h2 {
+        padding-bottom: 0;
+        margin: 0;
+    }
 }
 
 .answers {
@@ -194,6 +237,7 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+    color: var(--secondary_navy);
 }
 
 label {
@@ -205,6 +249,14 @@ label {
     height: 50px;
     min-width: 400px;
     border: 1px solid var(--secondary_navy);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 /* hide default radio circle */
@@ -216,15 +268,19 @@ label input[type="radio"] {
 label:has(input[type="radio"]:checked) {
     background-color: var(--secondary_navy);
     color: white;
-    transform: scale(1.02);
 }
 
 #resultImage {
-    width: 400px;
-    border-radius: 20px;
+    object-fit: cover;
+    width: 600px;
+    height: 600px;
+    border-radius: 100%;
+    border: 20px solid var(--secondary_yellow);
 }
 
-
+h2#result_title {
+    color: var(--secondary_navy);
+}
 
 footer {
     min-height: 230px;

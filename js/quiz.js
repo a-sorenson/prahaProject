@@ -10,27 +10,27 @@
 const questions = [
     {
         question: "1. What element do you most identify with?",
-        answers: ["a", "b", "c", "d", "e"]
+        answers: [{a:"Time"}, {b:"Water"}, {c:"Fire"}, {d:"Earth"}, {e:"Air"}]
     },
     {
-        question: "Question 2",
-        answers: ["a", "b", "c", "d", "e"]
+        question: "2. What is your favorite weather?",
+        answers: [{a:"Rainy"}, {b:"Sunny"}, {c:"Cloudy"}, {d:"Stormy"}, {e:"Windy"}]
     },
     {
-        question: "Question 2",
-        answers: ["a", "b", "c", "d", "e"]
+        question: "3. What is your dream date?",
+        answers: [{a:"The Beach"}, {b:"A Picnic"}, {c:"Hike"}, {d:"Fancy Dinner"}, {e:"Boat Ride"}]
     },
     {
-        question: "Question 2",
-        answers: ["a", "b", "c", "d", "e"]
+        question: "4. What is your favorite food?",
+        answers: [{a:"Italian"}, {b:"Fast Food"}, {c:"French"}, {d:"Chinese"}, {e:"Mexican"}]
     },
     {
-        question: "Question 2",
-        answers: ["a", "b", "c", "d", "e"]
+        question: "5. What is your dream pet?",
+        answers: [{a:"Lizard"}, {b:"Cat"}, {c:"Horse"}, {d:"Dog"}, {e:"Fish"}]
     },
     {
-        question: "Question 2",
-        answers: ["a", "b", "c", "d", "e"]
+        question: "6. Who is the coolest person in the world?",
+        answers: [{a:"Anika R S"}, {b:"Anika R"}, {c:"Anika"}, {d:"Anika Sorenson"}, {e:"Anika Rae Sorenson"}]
     }
 ];
 
@@ -43,7 +43,11 @@ let monuments = {
 };
 
 let monumentPics = {
-    a:"../img/astro_clock.jpg"
+    a:"../img/astro_clock.jpg",
+    b:"../img/stVitus.jpg",
+    c:"../img/charlesBridge.jpg",
+    d:"../img/dancingHouse.jpg",
+    e:"../img/lennon.jpg"
 }
 
 let monumentResult = "";
@@ -52,7 +56,6 @@ let quizAnswers = [];
 let answerCounts = {a:0, b:0, c:0, d: 0, e:0};
 
 const quiz = document.getElementById("quiz");
-const result = document.getElementById("result");
 
 //https://www.sitepoint.com/simple-javascript-quiz/
 function buildQuiz(){
@@ -67,25 +70,27 @@ function buildQuiz(){
             const answers = [];
 
             // and for each available answer...
-            for(let letter in currentQuestion.answers){
-                // ...add an HTML radio button
-                answers.push(
-                    `<label>
-                        <input type="radio" name="q${questionNumber+1}" value="${currentQuestion.answers[letter]}" class="answer">
-                        ${currentQuestion.answers[letter]}
-                    </label>`
-                );
-            }
+            currentQuestion.answers.forEach(answerObj => {
+                const letter = Object.keys(answerObj)[0];
+                const answerText = answerObj[letter];
+
+                answers.push(`
+                    <label>
+                        <input type="radio" name="q${questionNumber + 1}" value="${letter}" class="answer" required>
+                        ${answerText}
+                    </label>
+                `);
+            });
 
             // add this question and its answers to the output
             output.push(
-                `<div class="question"> ${currentQuestion.question} </div>
+                `<h2 class="question"> ${currentQuestion.question} </h2>
         <div class="answers"> ${answers.join('')} </div>`
             );
         }
     );
 
-    output.push('<input type="submit" value="Submit">');
+    output.push('<input type="submit" value="Submit" class="submit_btn">');
 
     // finally combine our output list into one string of HTML and put it on the page
     quiz.innerHTML = output.join('');
@@ -100,15 +105,16 @@ function calculateResult(event) {
         answerCounts[answer]++;
     });
 
-    let mostFrequent;
-    let mostFrequentCount = 0;
+    let mostFrequentCount = Math.max(...Object.values(answerCounts));
 
-    for (let count in answerCounts)  {
-        if (answerCounts[count] > mostFrequentCount) {
-            mostFrequent = count;
-            mostFrequentCount = answerCounts[count];
-        }
-    }
+    let tiedChoices = Object.keys(answerCounts).filter(
+        key => answerCounts[key] === mostFrequentCount
+    );
+
+    let mostFrequent = tiedChoices[
+        Math.floor(Math.random() * tiedChoices.length)
+        ];
+
     event.preventDefault();
     console.log(quizAnswers);
     console.log(mostFrequent);
@@ -121,17 +127,31 @@ function calculateResult(event) {
 
 function displayResults(){
     quiz.innerHTML = '';
+    quiz.classList.add('results');
+    quiz.classList.remove('default');
+    quiz.style.boxShadow = 'none';
 
-    quiz.innerHTML = `<h2>You are the ${monumentResult}</h2>\n` +
+    quiz.innerHTML =
         `<img src=${monumentPic} alt="Building Picture" id="resultImage" />\n` +
-        `<button class="back">Back to Homepage</button>`;
+        `<h2 id="result_title">You are the ${monumentResult}</h2>\n` +
+        `<div class="buttons">` +
+        `   <button class="quiz_btn">Take Quiz Again</button>` +
+        `   <button class="home_btn">Back to Homepage</button>` +
+        `</div>`;
 
-    let backBtn = document.getElementsByClassName("back")[0];
-    backBtn.addEventListener("click",redirect);
+    let quizBtn = document.getElementsByClassName("quiz_btn")[0];
+    quizBtn.addEventListener("click",redirectQuiz);
+
+    let homeBtn = document.getElementsByClassName("home_btn")[0];
+    homeBtn.addEventListener("click",redirectHome);
 }
 
-function redirect(){
+function redirectHome(){
     setTimeout(function () { window.location = "../html/homepage.html" }, 1);
+}
+
+function redirectQuiz(){
+    setTimeout(function () { window.location = "../html/quiz.html" }, 1);
 }
 
 document.addEventListener("DOMContentLoaded", buildQuiz);
