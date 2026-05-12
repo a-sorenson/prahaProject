@@ -11,7 +11,7 @@
 
     </nav>
 
-    <header id="home_header">
+    <header id="postcard_header">
         <div>P</div>
         <div>R</div>
         <div>A</div>
@@ -19,17 +19,17 @@
         <div>A</div>
     </header>
 
-    <section id="places">
-        <h1>Oh the places I went!</h1>
-        <div id="places_cards">
-            <div class="sign_card">
-                <p>Favorites</p>
+    <section id="overview">
+        <h1>Oh the things I did!</h1>
+        <div id="overview_cards">
+            <div class="sign_card" id="favorite_sign">
+                <h2>Favorites</h2>
             </div>
-            <div class="sign_card">
-                <p>Activities</p>
+            <div class="sign_card" id="activity_sign">
+                <h2>Activities</h2>
             </div>
-            <div class="sign_card">
-                <p>Travels</p>
+            <div class="sign_card" id="travel_sign">
+                <h2>Travels</h2>
             </div>
         </div>
     </section>
@@ -37,61 +37,87 @@
     <section id="activities">
         <h1>Activities</h1>
         <div id="activities_cards">
+
             <div class="activity_card">
                 <img src="/img/glass_blowing.jpg" class="activity_photo" alt="Glass Blowing">
+                <div class="activity_blurb">
+                    <h3> Cultural Education </h3>
+                    <p>
+                        Many of the activities that my program scheduled abroad focused on hands
+                        on interaction with the history of the Czech Republic. We participated in
+                        Christmas traditions, cheered on the local hockey team, and attended an orchestral
+                        concert at the National Theater.
+                    </p>
+                </div>
             </div>
+
             <div class="activity_card">
                 <img src="../img/goKart.jpg" class="activity_photo" alt="Go Kart track"/>
+                <div class="activity_blurb">
+                    <h3> Unique Experiences </h3>
+                    <p>
+                        There is a handful of activities that I never expected to be part of my study
+                        abroad experience. I played real life mario kart, held a bald eagle, and helped
+                        create a vase from molten glass. All of these were tied closely with Czech culture
+                        and past times but had their own special element that made them stand out.
+                    </p>
+                </div>
             </div>
+
         </div>
         <button id="more_adventures" class="more_btn">More Adventures</button>
     </section>
 
     <section id="travels">
         <h1>My Travels</h1>
+
+        <p>
+            While I was abroad I also took the opportunity to travel! I visited 4 different
+            countries as well as 5 different cities in the Czech Republic. Below are a few of
+            my favorite places I went!
+        </p>
+
         <div id="travel_imgs">
             <div class="travel_card">
                 <img src="../img/rome_cover.jpg" class="travel_img" alt="Rome cover"/>
-                Rome, Italy
+                <h2>Rome, Italy</h2>
             </div>
             <div class="travel_card">
                 <img src="../img/budapest_cover.jpg" class="travel_img" alt="Budapest cover"/>
-                Budapest, Hungary
+                <h2>Budapest, Hungary</h2>
             </div>
             <div class="travel_card">
                 <img src="../img/dresden_cover.jpg" class="travel_img" alt="Dresden cover"/>
-                Dresden, Germany
+                <h2>Dresden, Germany</h2>
             </div>
         </div>
         <button id="more_travel" class="more_btn">More Travels</button>
 
     </section>
 
-    <section id="quiz">
+    <section id="quiz_section">
         <h1>What Prague building are you?</h1>
+
         <div id="quiz_imgs">
-            <div class="quiz_img">
-                quiz img
-            </div>
-            <div class="quiz_img">
-                quiz_img
-            </div>
-            <div class="quiz_img">
-                quiz_img
-            </div>
-            <div class="quiz_img">
-                quiz_img
-            </div>
-            <div class="quiz_img">
-                quiz_img
-            </div>
+
+            <img src="/img/astro_clock.jpg" class="quiz_img" alt="astro clock"/>
+
+            <img src="/img/charlesBridge.jpg" class="quiz_img" alt="charles bridge"/>
+
+            <img src="/img/dancingHouse.jpg" class="quiz_img" alt = "dancing house"/>
+
+            <img src="/img/lennon.jpg" class="quiz_img" alt = "lennon wall"/>
+
+            <img src="/img/stVitus.jpg" class="quiz_img" alt = "St Vitus"/>
+
         </div>
+
+        <p>
+            If you visited Prague and could only visit one monument do you know which one
+            is the right choice? Take the quiz and find out!
+        </p>
+
         <button class="more_btn quiz_btn"  onclick="window.location.href='../html/quiz.html'">Take the Quiz!</button>
     </section>
-
-    <footer>
-
-    </footer>
-
 </body>
 </html>
