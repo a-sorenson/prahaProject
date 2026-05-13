@@ -415,7 +415,6 @@ video {
 .top3 {
     padding: 0;
     background-color: var(--primary_yellow);
-    margin-top: 20vh;
 }
 
 .top3_container {
