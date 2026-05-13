@@ -1,9 +1,10 @@
 :root {
-    --secondary_navy: #011936;
-    --secondary_yellow: #ffeeb5;
+    --primary_navy: #011936;
+    --primary_yellow: #ffeeb5;
+    --secondary_skyBlue: #A1CDEE;
     --highlight_pink: #A61C3C;
     font-family: "Nunito", sans-serif;
-    color: var(--secondary_navy);
+    color: var(--primary_navy);
 }
 
 /*General*/
@@ -39,6 +40,7 @@ h3 {
 
 p {
     font-size: 16pt;
+    line-height: 1.6;
 }
 
 button, input[type=submit] {
@@ -70,7 +72,7 @@ button, input[type=submit] {
     margin-top: 12px;
 }
 
-#postcard_header {
+.postcard_header {
     background-image: url("/img/homepage_photo.jpg");
     background-color: rgba(0,0,0,0.3);
     background-blend-mode: overlay;
@@ -86,10 +88,15 @@ button, input[type=submit] {
     max-width: 100%;
     overflow: hidden;
 
-    border: 20px solid var(--secondary_yellow);
-    color: var(--secondary_yellow);
+    border: 20px solid var(--primary_yellow);
+    color: var(--primary_yellow);
     font-family: 'Calistoga', serif;
     font-size: 29vw;
+}
+
+#favorites_header {
+    font-size: 18.3vw;
+    min-height: 40vh;
 }
 
 /*Overview Section*/
@@ -242,7 +249,7 @@ button, input[type=submit] {
 }
 
 .quiz_img {
-    border: var(--secondary_yellow) 5px solid;
+    border: var(--primary_yellow) 5px solid;
     object-fit: cover;
 
     width: 200px;
@@ -262,7 +269,7 @@ button, input[type=submit] {
 
 #quiz_title {
     padding: 40px 0;
-    color: var(--secondary_navy);
+    color: var(--primary_navy);
 }
 
 .form_container {
@@ -280,7 +287,7 @@ button, input[type=submit] {
     justify-content: center;
     border-radius: 10px;
     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
-    color: var(--secondary_navy);
+    color: var(--primary_navy);
 }
 
 form.default {
@@ -302,7 +309,7 @@ form.results {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    color: var(--secondary_navy);
+    color: var(--primary_navy);
 }
 
 label {
@@ -313,7 +320,7 @@ label {
     padding: 10px 20px;
     height: 50px;
     min-width: 400px;
-    border: 1px solid var(--secondary_navy);
+    border: 1px solid var(--primary_navy);
     border-radius: 5px;
     text-align: center;
 }
@@ -331,7 +338,7 @@ label input[type="radio"] {
 
 /* selected label style */
 label:has(input[type="radio"]:checked) {
-    background-color: var(--secondary_navy);
+    background-color: var(--primary_navy);
     color: white;
 }
 
@@ -340,15 +347,118 @@ label:has(input[type="radio"]:checked) {
     width: 600px;
     height: 600px;
     border-radius: 100%;
-    border: 20px solid var(--secondary_yellow);
+    border: 20px solid var(--primary_yellow);
 }
 
 h2#result_title {
-    color: var(--secondary_navy);
+    color: var(--primary_navy);
 }
 
-footer {
-    min-height: 230px;
+/*FAVORTIES.HTML*/
+
+video {
+    width: 880px;
+    height: auto;
+
+    border: 20px solid var(--primary_yellow);
+}
+
+.top3 {
+    padding: 0 0 0 0;
+}
+
+.top3_container {
+    display: flex;
+    flex-direction: row;
+    gap: 52px;
+
+    img {
+        width: 400px;
+        height: 470px;
+        object-fit: cover;
+    }
+}
+
+.top_info {
+    text-wrap: wrap;
+    padding: 52px;
+
+    p {
+        max-width: 900px;
+    }
+
+}
+
+#rank1, #rank3 {
+    background-color: var(--primary_navy);
+    color: white;
+
+}
+
+#rank2 {
+    background-color: var(--secondary_skyBlue);
+}
+
+.yellow_divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary_yellow);
+    height: 25vh;
+}
+
+.small_highlights {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    min-height: 50vh;
+    img{
+        border-radius: 100%;
+
+        object-fit: cover;
+        min-width: 400px;
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/*Food Rating Seconds*/
+
+.food_ratings_container {
+    display: flex;
+    gap: 52px;
+
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 20px;
+    scrollbar-width: none;
+}
+
+.food_ratings_card {
+    display: flex;
+    height: 500px;
+    gap: 20px;
+
+
+    background-color: var(--secondary_skyBlue);
+
+    img{
+        width: 350px;
+        object-fit: cover;
+    }
+
+    .foodRate_info {
+        display: flex;
+        flex-direction: column;
+        min-width: 400px;
+        max-height: 500px;
+
+        text-wrap: wrap;
+        padding-bottom: 24px;
+        padding-right: 20px;
+    }
 }
 
 
