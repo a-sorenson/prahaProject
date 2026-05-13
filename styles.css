@@ -73,7 +73,7 @@ button, input[type=submit] {
 }
 
 .postcard_header {
-    background-image: url("/img/homepage_photo.jpg");
+    background-image: url("img/homepage_photo.jpg");
     background-color: rgba(0,0,0,0.3);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
@@ -162,21 +162,21 @@ nav {
 }
 
 #favorite_sign {
-    background-image: url("/img/favorite_sign.png");
+    background-image: url("img/favorite_sign.png");
 }
 
 #activity_sign {
-    background-image: url("/img/activity_sign.png");
+    background-image: url("img/activity_sign.png");
 }
 
 #travel_sign {
-    background-image: url("/img/travel_sign.png");
+    background-image: url("img/travel_sign.png");
 }
 
 /*Activities Section*/
 
 #activities {
-    background-image: url("/img/backgrounds/river_curve.png");
+    background-image: url("img/backgrounds/river_curve.png");
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: clamp(800px, 45vw, 789px) auto;
@@ -213,7 +213,7 @@ nav {
 /*Travels Section*/
 
 #travels {
-    background-image: url("/img/backgrounds/travels_background.png");
+    background-image: url("img/backgrounds/travels_background.png");
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -248,7 +248,7 @@ nav {
 /*Quiz Section*/
 
 #quiz_section {
-    background-image: url("/img/backgrounds/monument_background.png");
+    background-image: url("img/backgrounds/monument_background.png");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100%;
@@ -283,7 +283,7 @@ nav {
 
 /*Quiz Page*/
 #quiz_page {
-    background-image: url("/img/backgrounds/monument_background.png");
+    background-image: url("img/backgrounds/monument_background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center bottom;
