@@ -156,7 +156,7 @@ function displayResults(){
 }
 
 function redirectHome(){
-    setTimeout(function () { window.location = "../html/index.html" }, 1);
+    setTimeout(function () { window.location = "../index.html" }, 1);
 }
 
 function redirectQuiz(){
