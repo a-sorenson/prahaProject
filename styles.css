@@ -94,6 +94,31 @@ button, input[type=submit] {
     font-size: 29vw;
 }
 
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding: 24px 0;
+    background-color: var(--primary_navy);
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: "Nunito", sans-serif;
+        font-size: 16pt;
+        font-weight: bold;
+
+        &:hover {
+            color: var(--primary_yellow);
+        }
+    }
+
+    .current_page {
+        color: var(--secondary_skyBlue);
+    }
+}
+
 #favorites_header {
     font-size: 18.3vw;
     min-height: 40vh;
@@ -155,8 +180,9 @@ button, input[type=submit] {
 #activities {
     background-image: url("/img/backgrounds/river_curve.png");
     background-repeat: no-repeat;
-    background-position: bottom right;
-    background-attachment: local;
+    background-position: right bottom;
+    background-size: clamp(800px, 45vw, 789px) auto;
+    background-attachment: scroll;
 }
 
 #activities_cards {
@@ -331,6 +357,28 @@ label {
     gap: 20px;
 }
 
+.submit_section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+#quizError {
+    min-height: 20px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #A61C3C;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#quizError:not(:empty) {
+    opacity: 1;
+}
+
 /* hide default radio circle */
 label input[type="radio"] {
     display: none;
@@ -364,13 +412,16 @@ video {
 }
 
 .top3 {
-    padding: 0 0 0 0;
+    padding: 0;
+    background-color: var(--primary_yellow);
+    margin-top: 20vh;
 }
 
 .top3_container {
     display: flex;
     flex-direction: row;
     gap: 52px;
+    width: 100%;
 
     img {
         width: 400px;
@@ -397,6 +448,7 @@ video {
 
 #rank2 {
     background-color: var(--secondary_skyBlue);
+    justify-content: flex-end;
 }
 
 .yellow_divider {
@@ -426,6 +478,12 @@ video {
 
 /*Food Rating Seconds*/
 
+.food_ratings {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
 .food_ratings_container {
     display: flex;
     gap: 52px;
@@ -433,7 +491,7 @@ video {
     overflow-x: auto;
     width: 100%;
     padding-bottom: 20px;
-    scrollbar-width: none;
+    scrollbar-width: thin;
 }
 
 .food_ratings_card {

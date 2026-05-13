@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <nav>
-
-    </nav>
-
     <header class="postcard_header">
         <div>P</div>
         <div>R</div>
@@ -19,18 +15,26 @@
         <div>A</div>
     </header>
 
+    <nav>
+        <a href="../html/favorites.html">Favorite Memories</a>
+        <a href="../html/activites.html">Activities</a>
+        <a class="current_page" href="../html/homepage.html">Home</a>
+        <a href="../html/travels.html">My Travels</a>
+        <a href="../html/quiz.html">Monument Quiz</a>
+    </nav>
+
     <section id="overview">
         <h1>Oh the things I did!</h1>
         <div id="overview_cards">
-            <div class="sign_card" id="favorite_sign">
+            <a href="../html/favorites.html" class="sign_card" id="favorite_sign">
                 <h2>Favorites</h2>
-            </div>
-            <div class="sign_card" id="activity_sign">
+            </a>
+            <a href="../html/activites.html" class="sign_card" id="activity_sign">
                 <h2>Activities</h2>
-            </div>
-            <div class="sign_card" id="travel_sign">
+            </a>
+            <a href="../html/travels.html" class="sign_card" id="travel_sign">
                 <h2>Travels</h2>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -65,7 +69,7 @@
             </div>
 
         </div>
-        <button id="more_adventures" class="more_btn">More Adventures</button>
+        <button id="more_adventures" class="more_btn" onclick="window.location.href='../html/activites.html'">More Adventures</button>
     </section>
 
     <section id="travels">
@@ -91,7 +95,7 @@
                 <h2>Dresden, Germany</h2>
             </div>
         </div>
-        <button id="more_travel" class="more_btn">More Travels</button>
+        <button id="more_travel" class="more_btn" onclick="window.location.href='../html/travels.html'">More Travels</button>
 
     </section>
 

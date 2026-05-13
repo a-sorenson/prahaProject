@@ -85,12 +85,16 @@ function buildQuiz(){
             // add this question and its answers to the output
             output.push(
                 `<h2 class="question"> ${currentQuestion.question} </h2>
-        <div class="answers"> ${answers.join('')} </div>`
+                 <div class="answers"> ${answers.join('')} </div>`
             );
         }
     );
 
-    output.push('<input type="submit" value="Submit" class="submit_btn">');
+    output.push(`
+        <div class="submit_section">
+            <input type="submit" value="Submit" class="submit_btn">
+        </div>
+    `);
 
     // finally combine our output list into one string of HTML and put it on the page
     quiz.innerHTML = output.join('');
@@ -99,6 +103,12 @@ function buildQuiz(){
 function calculateResult(event) {
     const formElem = document.querySelector("#quiz");
     const form = new FormData(formElem);
+    event.preventDefault();
+
+    if (!formElem.checkValidity()) {
+        alert("One or more questions are unanswered. Please complete quiz to submit.")
+        return;
+    }
 
     form.forEach((answer) => {
         quizAnswers.push(answer);
@@ -115,7 +125,6 @@ function calculateResult(event) {
         Math.floor(Math.random() * tiedChoices.length)
         ];
 
-    event.preventDefault();
     console.log(quizAnswers);
     console.log(mostFrequent);
 
