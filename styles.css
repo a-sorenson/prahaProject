@@ -153,7 +153,7 @@ button, input[type=submit] {
 /*Activities Section*/
 
 #activities {
-    background-image: url("/img/river_curve.png");
+    background-image: url("/img/backgrounds/river_curve.png");
     background-repeat: no-repeat;
     background-position: bottom right;
     background-attachment: local;
@@ -189,7 +189,7 @@ button, input[type=submit] {
 /*Travels Section*/
 
 #travels {
-    background-image: url("/img/travels_background.png");
+    background-image: url("/img/backgrounds/travels_background.png");
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -224,7 +224,7 @@ button, input[type=submit] {
 /*Quiz Section*/
 
 #quiz_section {
-    background-image: url("/img/monument_background.png");
+    background-image: url("/img/backgrounds/monument_background.png");
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: 100%;
@@ -242,8 +242,8 @@ button, input[type=submit] {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 24px;
     flex-wrap: wrap;
-    gap: 84px;
     padding: 20px 0 20px 0;
     margin-bottom: 10%;
 }
@@ -260,7 +260,7 @@ button, input[type=submit] {
 /*Quiz Page*/
 
 #quiz_page {
-    background-image: url("/img/monument_background.png");
+    background-image: url("/img/backgrounds/monument_background.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center bottom;
@@ -461,6 +461,34 @@ video {
     }
 }
 
+/*ACTIVITIES.HTML*/
 
+#activities_header {
+    font-size: 18vw;
+    min-height: 40vh;
+}
+
+.summary_list_container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+
+    li {
+        color: var(--primary_navy);
+        font-size: 24pt;
+        line-height: 1.6;
+    }
+}
+
+/*TRAVELS.HTML*/
+
+#travels_header {
+    font-size: 22.5vw;
+    min-height: 40vh;
+}
 
 

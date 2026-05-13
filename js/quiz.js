@@ -43,11 +43,11 @@ let monuments = {
 };
 
 let monumentPics = {
-    a:"../img/astro_clock.jpg",
-    b:"../img/stVitus.jpg",
-    c:"../img/charlesBridge.jpg",
-    d:"../img/dancingHouse.jpg",
-    e:"../img/lennon.jpg"
+    a:"../img/quiz_monuments/astro_clock.jpg",
+    b:"../img/quiz_monuments/stVitus.jpg",
+    c:"../img/quiz_monuments/charlesBridge.jpg",
+    d:"../img/quiz_monuments/dancingHouse.jpg",
+    e:"../img/quiz_monuments/lennon.jpg"
 }
 
 let monumentResult = "";
