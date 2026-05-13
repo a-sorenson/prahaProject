@@ -119,11 +119,7 @@ nav {
     }
 }
 
-#favorites_header {
-    font-size: 18.3vw;
-    min-height: 40vh;
-}
-
+/*HOMEPAGE.HTML*/
 /*Overview Section*/
 
 #overview {
@@ -149,6 +145,8 @@ nav {
 
     min-width: 350px;
     min-height: 464px;
+
+    text-decoration: none;
 
 
     h2 {
@@ -284,7 +282,6 @@ nav {
 }
 
 /*Quiz Page*/
-
 #quiz_page {
     background-image: url("/img/backgrounds/monument_background.png");
     background-repeat: no-repeat;
@@ -402,7 +399,11 @@ h2#result_title {
     color: var(--primary_navy);
 }
 
-/*FAVORTIES.HTML*/
+/*FAVORITES.HTML*/
+#favorites_header {
+    font-size: 18.3vw;
+    min-height: 40vh;
+}
 
 video {
     width: 880px;
